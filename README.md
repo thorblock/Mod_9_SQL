@@ -1,4 +1,4 @@
-# sql-challenge
+#sql-challenge
 Sample data is a mock-up of employees at a company. The database was covered using pgAdmin4; table creation aims to emulate data engineering and analysis within SQL.
 
 ## EmployeeSQL folder
