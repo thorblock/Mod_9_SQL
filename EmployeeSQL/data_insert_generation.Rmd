@@ -1,0 +1,72 @@
+---
+title: "data_inserts_bc_lol"
+output: html_notebook
+---
+
+
+```{r}
+library(readr)
+library(tidyr)
+```
+
+```{r}
+# read and store csvs, include csvs in wd
+departments <- read_csv("departments.csv")
+dept_emp <- read_csv("dept_emp.csv")
+dept_manager <- read_csv("dept_manager.csv")
+employees <- read_csv("employees.csv")
+salaries <- read_csv("salaries.csv")
+titles <- read_csv("titles.csv")
+```
+
+```{r}
+# copy station_insert, req from excel
+departments_insert <- paste("('",departments$dept_no,
+                            "', '",departments$dept_name,
+                            "'),", sep = "")
+dept_emp_insert <- paste("('",dept_emp$emp_no,
+                         "', '",dept_emp$dept_no,
+                         "'),", sep = "")
+dept_manager_insert <- paste("('",dept_manager$dept_no,
+                             "', '",dept_manager$emp_no,
+                             "'),", sep = "")
+employees_insert <- paste("(", employees$emp_no,
+                          ", '", employees$emp_title_id,
+                          "', ", employees$birth_date,
+                          ", '", employees$first_name,
+                          "', '", employees$last_name, 
+                          "', '", employees$sex,
+                          "', ", employees$hire_date,
+                          "),", sep = "")
+salaries_insert <- paste("(",salaries$emp_no,
+                         ", ",salaries$salary,
+                         "),", sep = "")
+titles_insert <-  paste("('",titles$title_id,
+                         "', '",titles$title,
+                         "'),", sep = "")
+```
+
+```{r}
+cat(departments_insert, sep = "\n")
+```
+
+```{r}
+cat(dept_emp_insert, sep = "\n")
+```
+
+```{r}
+cat(dept_manager_insert, sep = "\n")
+```
+
+```{r}
+cat(employees_insert, sep = "\n")
+```
+
+```{r}
+cat(salaries_insert, sep = "\n")
+```
+
+```{r}
+cat(titles_insert, sep = "\n")
+```
+
